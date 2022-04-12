@@ -23,7 +23,7 @@ window.addEventListener('keypress', e => {
     typeTask(currentInput);
 });
 
-const typeTask = (input) => {
+function typeTask (input) {
     userContent.removeChild(input);
 
     const div = document.createElement('div');
@@ -35,7 +35,7 @@ const typeTask = (input) => {
     inputExists = false;
 };
 
-const inputAlreadyExists = () => {
+function inputAlreadyExists() {
     currentInput.style.boxShadow = "0 0 10px red";
     currentInput.style.border = "1px solid red";
 };
