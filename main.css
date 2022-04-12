@@ -1,0 +1,99 @@
+@keyframes todo-elements {
+    0%{
+        color: white;
+    }
+    25%{
+        color: rgb(213, 213, 213)
+    }
+    50%{
+        color: rgb(205, 205, 205);
+    }
+    75%{
+        color: rgb(200, 200, 200);
+    }
+    100%{
+        color: rgb(195, 195, 195);
+    }
+}
+
+#container {
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    height: 100%;
+    top: 0;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background: linear-gradient(to top, #000000, #434343);
+}
+
+#header {
+    width: 320px;
+    height: 70px;
+    margin-top: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(95, 95, 95);
+    box-shadow: 0 0 15px rgb(48, 48, 48);
+}
+
+#head-text {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 35px;
+
+    color: orangered;
+
+    line-height: 65px;
+    margin-left: 25px;
+}
+
+.element-icon {
+    width:15px;
+    height: 15px;
+    margin-top: 50px;
+    margin-right: 25px;
+
+    font-size: 20px;
+    margin-top: 40px;
+
+    float: right;
+
+    color: white;
+}
+
+.element-icon:hover {
+    cursor: pointer;
+
+    animation: todo-elements 2s ease-in-out forwards;
+}
+
+#user-content {
+    width: 320px;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.task-input {
+    width: 200px;
+    height: 15px;
+    margin-left: 25px;
+    margin-top: 25px;
+}
+
+.task {
+    width: 200px;
+    height: 15px;
+    margin-left: 25px;
+    margin-top: 25px;
+
+    font-size: 18px;
+
+    color: white;
+    text-shadow: 0 0 1px white;
+}
