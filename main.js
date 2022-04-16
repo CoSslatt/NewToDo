@@ -1,13 +1,18 @@
 const userContent = document.querySelector('#user-content');
 
+const addButton = document.querySelector('#add-icon');
+
 let currentInput;
 let previousInput;
 let inputExists = false;
 
-window.addEventListener('click', e => {
+addButton.addEventListener('click', e => {
+    if (currentInput != null) currentInput.classList.remove('input-already-exists');
 
     if (e.target.innerText != 'add') return;
-    if (inputExists){inputAlreadyExists(); return;}
+    if (inputExists){
+        currentInput.classList.add('input-already-exists'); return;
+    }
 
     const input = document.createElement('input');
     const newInput = userContent.appendChild(input);
@@ -23,7 +28,16 @@ window.addEventListener('keypress', e => {
     typeTask(currentInput);
 });
 
-const typeTask = (input) => {
+userContent.addEventListener('click', e => {
+    if (e.target.className != 'task') return;
+
+    e.target.classList.add('task-removed');
+    setTimeout(() => {userContent.removeChild(e.target);}, 200);
+});
+
+function typeTask (input) {
+    if (currentInput.value == '') return;
+
     userContent.removeChild(input);
 
     const div = document.createElement('div');
@@ -33,9 +47,4 @@ const typeTask = (input) => {
     newDiv.innerText = input.value;
 
     inputExists = false;
-};
-
-const inputAlreadyExists = () => {
-    currentInput.style.boxShadow = "0 0 10px red";
-    currentInput.style.border = "1px solid red";
 };

@@ -16,6 +16,46 @@
     }
 }
 
+@keyframes input-animation {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+      }
+
+      20%, 80% {
+        transform: translate3d(2px, 0, 0);
+      }
+
+      30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+      }
+
+      40%, 60% {
+        transform: translate3d(4px, 0, 0);
+      }
+}
+
+@keyframes task-appear {
+    from {
+        transform: translateX(200px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes task-removed {
+    from {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(200px);
+        opacity: 0;
+    }
+}
+
 #container {
     height: 100%;
     width: 100%;
@@ -29,7 +69,7 @@ html {
 body {
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background: linear-gradient(to top, #000000, #434343);
+    background-color: #363f4d;
 }
 
 #header {
@@ -38,15 +78,15 @@ body {
     margin-top: 3em;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgb(95, 95, 95);
-    box-shadow: 0 0 15px rgb(48, 48, 48);
+    background-color: #3d4757;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
 }
 
 #head-text {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 35px;
 
-    color: orangered;
+    color: #b55728;
 
     line-height: 65px;
     margin-left: 25px;
@@ -82,18 +122,38 @@ body {
 .task-input {
     width: 200px;
     height: 15px;
-    margin-left: 25px;
+    margin-left: 60px;
     margin-top: 25px;
+}
+
+.input-already-exists {
+    box-shadow: 0 0 10px #910c0c;
+    border: 1px solid #910c0c;
+
+    animation: input-animation 0.5s ease-in-out forwards;
 }
 
 .task {
     width: 200px;
-    height: 15px;
-    margin-left: 25px;
-    margin-top: 25px;
+    height: 50px;
+    margin-left: 60px;
+    margin-top: 15px;
+
+    line-height: 45px;
+    text-align: center;
 
     font-size: 18px;
 
     color: white;
     text-shadow: 0 0 1px white;
+
+    animation: task-appear 250ms ease-in-out forwards;
+}
+
+.task:hover {
+    border: 1px solid #b55728;
+}
+
+.task-removed {
+    animation: task-removed 250ms ease-in-out forwards;
 }
