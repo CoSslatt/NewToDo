@@ -104,11 +104,14 @@ body {
     float: right;
 
     color: white;
+
+    transition: 200ms ease-in-out;
 }
 
 .element-icon:hover {
     cursor: pointer;
 
+    transform: translateY(-2.5px);
     animation: todo-elements 2s ease-in-out forwards;
 }
 
@@ -135,25 +138,17 @@ body {
 
 .task {
     width: 200px;
-    height: 50px;
-    margin-left: 60px;
-    margin-top: 15px;
-
-    line-height: 45px;
-    text-align: center;
+    height: 55px;
+    margin-left: 25px;
+    margin-top: 20px;
+    line-height: 50px;
 
     font-size: 18px;
 
     color: white;
     text-shadow: 0 0 1px white;
-
-    animation: task-appear 250ms ease-in-out forwards;
 }
 
 .task:hover {
-    border: 1px solid #b55728;
-}
-
-.task-removed {
-    animation: task-removed 250ms ease-in-out forwards;
+    border: 1px solid rgb(0, 0, 0);
 }
