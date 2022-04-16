@@ -28,7 +28,16 @@ window.addEventListener('keypress', e => {
     typeTask(currentInput);
 });
 
+userContent.addEventListener('click', e => {
+    if (e.target.className != 'task') return;
+
+    e.target.classList.add('task-removed');
+    setTimeout(() => {userContent.removeChild(e.target);}, 200);
+});
+
 function typeTask (input) {
+    if (currentInput.value == '') return;
+
     userContent.removeChild(input);
 
     const div = document.createElement('div');
@@ -38,9 +47,4 @@ function typeTask (input) {
     newDiv.innerText = input.value;
 
     inputExists = false;
-};
-
-function inputAlreadyExists() {
-    currentInput.style.boxShadow = "0 0 10px red";
-    currentInput.style.border = "1px solid red";
 };

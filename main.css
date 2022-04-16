@@ -147,8 +147,14 @@ body {
 
     color: white;
     text-shadow: 0 0 1px white;
+
+    animation: task-appear 250ms ease-in-out forwards;
 }
 
 .task:hover {
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid #b55728;
+}
+
+.task-removed {
+    animation: task-removed 250ms ease-in-out forwards;
 }
