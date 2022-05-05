@@ -14,7 +14,4 @@
 
 ---
 
-### I've learned:
-- 🔰 CSS animations
-- 🔰 JS appending child
-- 🔰 JS appending class to object
+https://narcikss.github.io/NewToDo/
