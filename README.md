@@ -21,4 +21,4 @@
 
 ---
 
-https://narcikss.github.io/NewToDo/
+https://cosslatt.github.io/NewToDo/
